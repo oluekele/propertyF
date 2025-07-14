@@ -5,7 +5,8 @@ const axiosWithAuth = () => {
   const token = localStorage.getItem('token');
 
   return axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: 'https://property-b.vercel.app/app', 
+    //'http://localhost:5000/api',
     headers: {
       Authorization: `Bearer ${token}`,
     },
