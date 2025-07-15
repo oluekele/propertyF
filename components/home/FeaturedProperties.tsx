@@ -34,7 +34,7 @@ export const FeaturedProperties = ({ preferredCategory }: Props) => {
       try {
         const res = await axiosWithAuth().get(`/properties`);
         const allProps: Property[] = res.data;
-
+        console.log(res)
         // Sort by latest (assuming backend sends in order; reverse if needed)
         const sorted = [...allProps].reverse();
 
