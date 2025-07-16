@@ -28,7 +28,7 @@ type Property = {
 export default function PropertiesPage() {
    const [properties, setProperties] = useState<Property[]>([]);
     const [loading, setLoading] = useState(true);
-  const [category, setCategory] = useState('all');
+  const [category, setCategory] = useState('All Categories');
   const [filters, setFilters] = useState<PropertyFilterValues>({
     location: 'All Locations',
     priceRange: 'All Prices',
@@ -57,7 +57,7 @@ export default function PropertiesPage() {
       p.location.toLowerCase().includes(filters.searchQuery.toLowerCase());
 
       const matchCategory =
-    category === 'all' || p.category.toLowerCase() === category.toLowerCase();
+    category === 'All Categories' || p.category.toLowerCase() === category.toLowerCase();
 
      return matchLocation && matchPrice && matchSearch && matchCategory;
   });

@@ -117,17 +117,17 @@ export const allProperties = [
 ];
 
 export const categories = [{name:'✓All Categories',
-  url: "all",
+  url: "All Categories",
 }, 
-{name:'⛆Lands', 
-  url: "Lands"
+{name:'⛆Land', 
+  url: "Land"
 }, 
-{name:'⛪Buildings',
-  url:"Buildings"
+{name:'⛪Commercial',
+  url:"Commercial"
 },
-{name: '圓Residential Homes',
-  url: "Residential Homes"
+{name: '圓Residential',
+  url: "Residential"
  },
- {name: '⛍Cars & Bikes',
-url: "Cars & Bikes"}
+ {name: '⛍Vehicle',
+url: "Vehicle"}
 ];
