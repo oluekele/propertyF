@@ -83,7 +83,7 @@ export const FeaturedProperties = ({ preferredCategory }: Props) => {
             {properties.map((property, i) => (
               <Card key={i} className="overflow-hidden shadow-md">
                 <Image
-                  src={`http://localhost:5000${property.image}`}
+                  src={`https://property-b.vercel.app${property.image}` || `http://localhost:5000${property.image}`}
                   alt={property.title}
                   width={200}
                   height={100}
