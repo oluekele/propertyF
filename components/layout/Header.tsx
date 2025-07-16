@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="text-xl font-bold text-primary">
           <Link href="/" className="text-[#03041d] flex items-center gap-3">
             <Image src={"/logo.png"} width={50} height={50} alt="Company logo" />
-            <span>Efan Rice Factory</span>
+            <span>Property Hub</span>
           </Link>
         </div>
 

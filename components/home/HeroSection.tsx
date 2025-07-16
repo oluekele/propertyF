@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
@@ -25,8 +26,12 @@ export const HeroSection = () => {
         Connecting you with the finest properties and vehicles across the globe.
       </p>
       <div className="space-x-4">
-        <Button variant="default" className="bg-orange-600">Explore Listings</Button>
-        <Button  className="bg-blue-900 text-white">Contact Us</Button>
+        <Link href={'/properties'}>
+          <Button variant="default" className="bg-orange-600">Explore Listings</Button>
+        </Link>
+        <Link href={'/contact'}>
+          <Button  className="bg-blue-900 text-white">Contact Us</Button>
+        </Link>
       </div>
     </motion.section>
   );

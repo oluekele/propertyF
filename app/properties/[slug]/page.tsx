@@ -51,7 +51,7 @@ export default function PropertyDetailPage() {
   return (
     <div className="max-w-5xl mx-auto p-6 py-20">
       <Image
-        src={`http://localhost:5000${property.image}`}
+        src={`https://property-b.vercel.app${property.image}` || `http://localhost:5000${property.image}`}
         alt={property.title}
         width={800}
         height={400}
