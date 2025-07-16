@@ -95,7 +95,7 @@ export default function AdminPropertiesPage() {
                 <tr key={p._id}>
                   <td className="p-3 border">
                     <Image
-                      src={`http://localhost:5000${p.image}`}
+                      src={`https://property-b.vercel.app/${p.image}` || `http://localhost:5000${p.image}`}
                       alt={p.title}
                       width={100}
                       height={100}
