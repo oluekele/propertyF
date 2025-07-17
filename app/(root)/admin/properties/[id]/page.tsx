@@ -48,6 +48,7 @@ export default function EditPropertyPage() {
         
         console.log(property)
         setExistingImage(property.image);
+        console.log(existingImage)
       } catch (err) {
         console.log(err)
         toast.error('Failed to load property');
@@ -179,7 +180,7 @@ export default function EditPropertyPage() {
 
         {existingImage && (
           <Image
-            src={`http://localhost:5000${existingImage}`}
+            src={`https://property-b.vercel.app${existingImage}` || `http://localhost:5000${existingImage}`}
             width={100}
             height={100}
             alt="Existing Property"
