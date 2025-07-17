@@ -6,7 +6,7 @@ const axiosWithAuth = () => {
 
   return axios.create({
     baseURL: 'https://property-b.vercel.app/api', 
-    //'http://localhost:5000/api',
+    // baseURL:'http://localhost:5000/api',
     headers: {
       Authorization: `Bearer ${token}`,
     },

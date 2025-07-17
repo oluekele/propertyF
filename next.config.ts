@@ -5,15 +5,14 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "property-b.vercel.app", 
+        hostname: "property-b.vercel.app", // ✅ Production backend
       },
       {
         protocol: "http",
-        hostname: "localhost", 
-        port: "5000",
+        hostname: "localhost", // ✅ Local backend
+        port: "5000", // MUST specify port if not 80/443
       },
     ],
-    domains: ['localhost'],
   },
 };
 
