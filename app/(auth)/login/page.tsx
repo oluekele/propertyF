@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -17,13 +17,13 @@ const LoginPage = () => {
   const login = useAuthStore((state) => state.login);
 
   // ✅ Auto-fill Zustand if refresh
-  useEffect(() => {
-    const savedToken = localStorage.getItem("token");
-    const savedUser = localStorage.getItem("user");
-    if (savedToken && savedUser) {
-      login(savedToken, JSON.parse(savedUser));
-    }
-  }, [login]);
+  // useEffect(() => {
+  //   const savedToken = localStorage.getItem("token");
+  //   const savedUser = localStorage.getItem("user");
+  //   if (savedToken && savedUser) {
+  //     login(savedToken, JSON.parse(savedUser));
+  //   }
+  // }, [login]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
