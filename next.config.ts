@@ -1,16 +1,18 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "property-b.vercel.app", // ✅ Production backend
+        hostname: "res.cloudinary.com",
+      },
+      {
+        protocol: "https",
+        hostname: "property-b.vercel.app",
       },
       {
         protocol: "http",
-        hostname: "localhost", // ✅ Local backend
-        port: "5000", // MUST specify port if not 80/443
+        hostname: "localhost",
+        port: "5000",
       },
     ],
   },

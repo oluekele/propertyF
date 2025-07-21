@@ -5,6 +5,7 @@ import { useRouter, useParams } from 'next/navigation';
 import Image from 'next/image';
 import axiosWithAuth from '@/lib/axios';
 import toast from 'react-hot-toast';
+import { getSafeImageUrl } from '@/utils/getSafeImageUrl';
 
 type Property = {
   _id: string;
@@ -51,8 +52,8 @@ export default function PropertyDetailPage() {
   return (
     <div className="max-w-5xl mx-auto p-6 py-20">
       <Image
-        src={`https://property-b.vercel.app${property.image}` || `http://localhost:5000${property.image}`}
-        alt={property.title}
+        src={getSafeImageUrl(property.image)}
+        alt={property.title || "Property"}
         width={800}
         height={400}
         className="w-full h-96 object-cover rounded-lg mb-6"

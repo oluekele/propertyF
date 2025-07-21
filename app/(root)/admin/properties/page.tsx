@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import Link from 'next/link';
 import Image from 'next/image';
 import axiosWithAuth from '@/lib/axios';
+import { getSafeImageUrl } from '@/utils/getSafeImageUrl';
 
 type Property = {
   _id: string;
@@ -57,6 +58,8 @@ export default function AdminPropertiesPage() {
     }
   };
 
+  
+
   return (
     <div className="w-full lg:w-4/5 mx-auto py-20 px-4">
       <div className="flex items-center justify-between mb-6">
@@ -95,8 +98,8 @@ export default function AdminPropertiesPage() {
                 <tr key={p._id}>
                   <td className="p-3 border">
                     <Image
-                      src={`https://property-b.vercel.app${p.image}` || `http://localhost:5000${p.image}`}
-                      alt={p.title}
+                      src={getSafeImageUrl(p.image)}
+                      alt={p.title || "Property"}
                       width={100}
                       height={100}
                       className="w-20 h-12 object-cover rounded"

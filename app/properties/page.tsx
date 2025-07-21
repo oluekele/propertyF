@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { CategoryFilter } from '@/components/properties/CategoryFilter';
 import axiosWithAuth from '@/lib/axios';
 import toast from 'react-hot-toast';
+import { getSafeImageUrl } from '@/utils/getSafeImageUrl';
 
 
 type Property = {
@@ -123,7 +124,8 @@ export default function PropertiesPage() {
         {paginated.map((p, i) => (
           <Link key={i} href={`/properties/${p._id}`}>
             <Card className="cursor-pointer hover:shadow-md transition">
-              <Image src={`https://property-b.vercel.app${p.image}` || `http://localhost:5000${p.image}`} alt={p.title} width={300} height={300} className="w-full h-48 object-cover" />
+              <Image src={getSafeImageUrl(p.image)}
+                alt={p.title || "Property"} width={300} height={300} className="w-full h-48 object-cover" />
               <CardContent>
                 <h4 className="font-semibold text-lg mb-1">{p.title}</h4>
                 <p className="text-sm text-gray-500 mb-1">{p.location}</p>

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import axiosWithAuth from "@/lib/axios";
 import toast from "react-hot-toast";
+import { getSafeImageUrl } from "@/utils/getSafeImageUrl";
 
 type Property = {
   _id: string;
@@ -83,8 +84,8 @@ export const FeaturedProperties = ({ preferredCategory }: Props) => {
             {properties.map((property, i) => (
               <Card key={i} className="overflow-hidden shadow-md">
                 <Image
-                  src={`https://property-b.vercel.app${property.image}` || `http://localhost:5000${property.image}`}
-                  alt={property.title}
+                  src={getSafeImageUrl(property.image)}
+                  alt={property.title || "Property"}
                   width={200}
                   height={100}
                   className="w-full h-48 object-cover"
